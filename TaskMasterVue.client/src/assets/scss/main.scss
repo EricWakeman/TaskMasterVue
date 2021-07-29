@@ -22,3 +22,9 @@ main {
   display: flex;
   align-items: stretch;
 }
+.grow{
+  transition: all .25s linear;
+}
+.grow:hover{
+  transform: scale(1.1);
+}

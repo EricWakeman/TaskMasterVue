@@ -25,7 +25,7 @@ namespace TaskMasterVue.Repositories
 
     internal TaskModel Create(TaskModel taskData)
     {
-      var sql = "INSERT INTO tasks(title, completed, creatorId, listId) VALUES(@Title,@Completed, @CreatorId, @ListId); SELECT LAST_INSERT_ID();";
+      var sql = "INSERT INTO tasks(title, completed, creatorId) VALUES(@Title,@Completed, @CreatorId); SELECT LAST_INSERT_ID();";
       int id = _db.ExecuteScalar<int>(sql, taskData);
       taskData.Id = id;
       return taskData;

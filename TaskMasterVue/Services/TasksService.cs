@@ -54,6 +54,7 @@ namespace TaskMasterVue.Services
 
     internal TaskModel Update(string userId, TaskModel taskData)
     {
+      taskData.CreatorId = userId;
       TaskModel original = _tr.GetOne(taskData.Id);
       if (original.CreatorId != userId)
       {
@@ -63,8 +64,8 @@ namespace TaskMasterVue.Services
       {
         throw new Exception("Invalid task id.");
       }
+      taskData.ListId = original.ListId;
       taskData.Title = taskData.Title ?? original.Title;
-      taskData.ListId = taskData.ListId != null ? taskData.ListId : original.ListId;
       int updated = _tr.Update(taskData);
       if (updated != 1)
       {
