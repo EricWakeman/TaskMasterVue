@@ -16,15 +16,26 @@
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
-
+body{
+color: rgb(246, 246, 248);
+}
 main {
   flex-grow: 1;
   display: flex;
   align-items: stretch;
+
 }
 .grow{
   transition: all .25s linear;
 }
 .grow:hover{
   transform: scale(1.1);
+}
+.hoverable{
+  cursor: pointer;
+}
+.container-fluid{
+  background-image: url('src/assets/img/stationerybackground.jpg');
+  background-size:cover;
+  
 }

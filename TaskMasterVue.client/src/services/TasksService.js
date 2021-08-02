@@ -4,7 +4,13 @@ import { logger } from '../utils/Logger'
 import { api } from './AxiosService'
 
 class TasksService {
-  async getAll(listId) {
+  async getAll() {
+    const res = await api.get('api/tasks')
+    AppState.tasks = res.data.map(t => new Task(t))
+    logger.log(res.data)
+  }
+
+  async getAllByListId(listId) {
     const res = await api.get('api/lists/' + listId + '/tasks')
     AppState.tasks = res.data.map(t => new Task(t))
   }

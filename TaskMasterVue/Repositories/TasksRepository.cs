@@ -25,7 +25,7 @@ namespace TaskMasterVue.Repositories
 
     internal TaskModel Create(TaskModel taskData)
     {
-      var sql = "INSERT INTO tasks(title, completed, creatorId) VALUES(@Title,@Completed, @CreatorId); SELECT LAST_INSERT_ID();";
+      var sql = "INSERT INTO tasks(title, completed, creatorId, listId) VALUES(@Title,@Completed, @CreatorId, @ListId); SELECT LAST_INSERT_ID();";
       int id = _db.ExecuteScalar<int>(sql, taskData);
       taskData.Id = id;
       return taskData;
@@ -35,6 +35,12 @@ namespace TaskMasterVue.Repositories
     {
       var sql = "SELECT * FROM tasks WHERE id = @taskId;";
       return _db.QueryFirstOrDefault<TaskModel>(sql, new { taskId });
+    }
+
+    internal List<TaskModel> GetAll(string id)
+    {
+      var sql = "SELECT * FROM tasks WHERE creatorId = @id;";
+      return _db.Query<TaskModel>(sql, new { id }).ToList();
     }
 
     internal int Update(TaskModel taskData)

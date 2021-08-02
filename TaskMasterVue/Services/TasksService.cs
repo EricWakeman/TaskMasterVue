@@ -32,6 +32,12 @@ namespace TaskMasterVue.Services
 
     }
 
+    internal List<TaskModel> GetAll(string id)
+    {
+      List<TaskModel> tasks = _tr.GetAll(id);
+      return tasks;
+    }
+
     internal TaskModel Create(TaskModel taskData)
     {
       TaskModel newTask = _tr.Create(taskData);

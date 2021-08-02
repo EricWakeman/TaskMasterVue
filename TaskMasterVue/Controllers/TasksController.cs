@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using CodeWorks.Auth0Provider;
 using Microsoft.AspNetCore.Authorization;
@@ -16,6 +17,21 @@ namespace TaskMasterVue.Controllers
     public TasksController(TasksService ts)
     {
       _ts = ts;
+    }
+    [HttpGet]
+    [Authorize]
+    public async Task<ActionResult<List<TaskModel>>> GetAll()
+    {
+      try
+      {
+        Account userInfo = await HttpContext.GetUserInfoAsync<Account>();
+        List<TaskModel> tasks = _ts.GetAll(userInfo.Id);
+        return Ok(tasks);
+      }
+      catch (System.Exception e)
+      {
+        return BadRequest(e.Message);
+      }
     }
     [HttpGet("{id}")]
     [Authorize]
