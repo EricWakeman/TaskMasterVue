@@ -4,7 +4,8 @@
       <span>
         {{ list.title }}
       </span>
-      <img src="src\assets\img\trash-can.png" class="trash grow hoverable" @click="deleteList(list.id)">
+      <i class="trash grow hoverable mdi mdi-trash-can" @click="deleteList(list.id)">
+      </i>
     </div>
     <div class="card-body">
       <Task v-for="t in tasks" :key="t.id" :task="t" />

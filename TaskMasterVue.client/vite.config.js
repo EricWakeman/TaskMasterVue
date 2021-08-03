@@ -5,8 +5,11 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [vue()],
   build: {
-    outDir: 'docs',
-    sourcemap: false
+    outDir: '../TaskMasterVue/wwwroot',
+    sourcemap: false,
+    rollupOptions: {
+      external: ['src/assets/img/trash-can.png']
+    }
   },
   server: {
     port: 8080
