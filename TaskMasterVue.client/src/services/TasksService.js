@@ -29,6 +29,7 @@ class TasksService {
     const res = await api.put('api/tasks/' + taskData.id, taskData)
     AppState.tasks = AppState.tasks.filter(l => l.id !== taskData.id)
     AppState.tasks.push(new Task(res.data))
+    AppState.tasks = AppState.tasks.sort(function compareId(t1, t2) { return t1.id - t2.id })
   }
 
   async deleteTask(taskId) {

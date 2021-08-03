@@ -22,11 +22,16 @@ import { computed, onMounted } from '@vue/runtime-core'
 import { AppState } from '../AppState'
 import { listsService } from '../services/ListsService'
 import { tasksService } from '../services/TasksService'
+import Pop from '../utils/Notifier'
 export default {
   setup() {
-    onMounted(() => {
-      listsService.getAll()
-      tasksService.getAll()
+    onMounted(async() => {
+      try {
+        await listsService.getAll()
+        await tasksService.getAll()
+      } catch (error) {
+        Pop.toast(error, 'error')
+      }
     })
     return {
       lists: computed(() => AppState.lists),

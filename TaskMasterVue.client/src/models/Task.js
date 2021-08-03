@@ -4,5 +4,6 @@ export class Task {
     this.title = data.title
     this.creatorId = data.creatorId
     this.listId = data.listId
+    this.completed = data.completed
   }
 }
