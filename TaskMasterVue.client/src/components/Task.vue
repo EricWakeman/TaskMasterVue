@@ -24,7 +24,8 @@
         checked
       >
     </label>
-    <img src="src\assets\img\trash-can.png" alt="delete task" class="hoverable grow trash" @click="deleteTask(task.id)">
+    <i alt="delete task" class="hoverable grow trash mdi mdi-trash-can" @click="deleteTask(task.id)">
+    </i>
   </div>
 </template>
 
