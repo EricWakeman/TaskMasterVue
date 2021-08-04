@@ -70,7 +70,7 @@ export default {
 
 }
 .newList{
-  font-size: 3rem;
+  font-size: 3rem !important;
 }
 }
 
