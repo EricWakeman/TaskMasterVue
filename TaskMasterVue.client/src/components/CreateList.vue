@@ -11,7 +11,7 @@
       <form class="modal-content" @submit.prevent="createList" id="list-form">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLongTitle">
-            Modal title
+            New List
           </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
