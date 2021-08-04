@@ -5,8 +5,8 @@
         <h1>Hello {{ user.nickname }}</h1>
       </div>
       <div class="col-12 newList">
-        <h3>Make a new List?</h3> <im alt="Create List" class=" grow hoverable mdi mdi-text-box-plus" data-toggle="modal" data-target="#createList">
-        </im>
+        <h3>Make a new List?</h3> <i alt="Create List" class=" grow hoverable mdi mdi-48px mdi-text-box-plus" data-toggle="modal" data-target="#createList">
+        </i>
       </div>
     </div>
     <div class="row pt-5 masonry-with-columns">
