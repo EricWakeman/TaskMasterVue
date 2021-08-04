@@ -4,7 +4,7 @@
       <div class="d-flex flex-column align-items-center">
         <img
           alt="logo"
-          src="../assets/img/cw-logo.png"
+          src="https://image.flaticon.com/icons/png/512/906/906334.png"
           height="45"
         />
       </div>
