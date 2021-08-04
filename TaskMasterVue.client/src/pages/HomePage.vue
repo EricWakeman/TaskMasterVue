@@ -4,8 +4,8 @@
       <div class="col-12 p-2">
         <h1>Hello {{ user.nickname }}</h1>
       </div>
-      <div class="col-12">
-        <h3>Make a new List?</h3> <im alt="Create List" class=" newList grow hoverable mdi mdi-text-box-plus" data-toggle="modal" data-target="#createList">
+      <div class="col-12 newList">
+        <h3>Make a new List?</h3> <im alt="Create List" class=" grow hoverable mdi mdi-text-box-plus" data-toggle="modal" data-target="#createList">
         </im>
       </div>
     </div>
@@ -70,7 +70,7 @@ export default {
 
 }
 .newList{
-  font-size: 3rem !important;
+  font-size: 3rem;
 }
 }
 
